@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "TurboWake – Supercar Alarm",
+    "slug": "turbowake",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "turbowake",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0F1E"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.turbowake.supercaralarm",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"],
+        "NSUserNotificationUsageDescription": "TurboWake needs notification permission to alert you when your alarm fires.",
+        "NSMicrophoneUsageDescription": "TurboWake does not use the microphone."
+      }
+    },
+    "android": {
+      "package": "com.turbowake.supercaralarm",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#EDF0FF"
+      },
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.VIBRATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.WAKE_LOCK",
+        "android.permission.USE_EXACT_ALARM",
+        "android.permission.USE_FULL_SCREEN_INTENT",
+        "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Feather.ttf"]
+        }
+      ],
+      "expo-web-browser",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#3D8EFF",
+          "sounds": [],
+          "androidMode": "default",
+          "androidCollapsedTitle": "TurboWake Alarm",
+          "defaultAndroidChannelId": "turbowake_alarm"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
